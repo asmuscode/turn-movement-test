@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c00ul0j8tsr6q"]
 
 [ext_resource type="Script" uid="uid://bftpk6e3ikavk" path="res://scripts/player.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://wl0fhbvxdpmh" path="res://scripts/grid_component.gd" id="1_tlwt5"]
+[ext_resource type="Script" uid="uid://b5t5qns32s8ns" path="res://scripts/turn_manager.gd" id="2_aqk2v"]
 [ext_resource type="Script" uid="uid://bm6jsff8mb3si" path="res://scripts/enemy.gd" id="2_fj7yv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1w8n"]
@@ -10,6 +12,12 @@ size = Vector2(64, 64)
 size = Vector2(64, 64)
 
 [node name="World" type="Node2D" unique_id=577106304]
+
+[node name="GridComponent" type="Node" parent="." unique_id=554484642]
+script = ExtResource("1_tlwt5")
+
+[node name="TurnManager" type="Node" parent="." unique_id=1674967723]
+script = ExtResource("2_aqk2v")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1574877102]
 position = Vector2(300, 300)
