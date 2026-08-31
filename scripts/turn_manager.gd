@@ -9,5 +9,9 @@ func can_player_act():
 
 func end_player_turn(player_position):
 	player_turn = false
-	enemy.take_turn(player_position)
+	# updated the turn(s) for future enemIES
+	run_enemy_turns(player_position)
 	player_turn = true
+
+func run_enemy_turns(player_position):
+	enemy.take_turn(player_position)
