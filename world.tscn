@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://wl0fhbvxdpmh" path="res://scripts/grid_component.gd" id="1_tlwt5"]
 [ext_resource type="Script" uid="uid://b5t5qns32s8ns" path="res://scripts/turn_manager.gd" id="2_aqk2v"]
 [ext_resource type="Script" uid="uid://bm6jsff8mb3si" path="res://scripts/enemy.gd" id="2_fj7yv"]
+[ext_resource type="Script" uid="uid://cuc720fva371j" path="res://movement_component.gd" id="4_036b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1w8n"]
 size = Vector2(64, 64)
@@ -32,7 +33,10 @@ offset_right = 64.0
 offset_bottom = 64.0
 color = Color(0.23319253, 0.5669613, 0.12480494, 1)
 
-[node name="Enemy" type="CharacterBody2D" parent="." unique_id=932765324]
+[node name="Node" type="Node" parent="Player" unique_id=1822894082]
+script = ExtResource("4_036b0")
+
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=932765324 groups=["enemies"]]
 script = ExtResource("2_fj7yv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=104491622]
@@ -40,6 +44,19 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_ubb3l")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy" unique_id=747096458]
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(0.8544315, 0.08668511, 0.15083697, 1)
+
+[node name="Enemy2" type="CharacterBody2D" parent="." unique_id=1814636891 groups=["enemies"]]
+position = Vector2(500, 0)
+script = ExtResource("2_fj7yv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2" unique_id=658335018]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_ubb3l")
+
+[node name="ColorRect" type="ColorRect" parent="Enemy2" unique_id=1670617488]
 offset_right = 64.0
 offset_bottom = 64.0
 color = Color(0.8544315, 0.08668511, 0.15083697, 1)
